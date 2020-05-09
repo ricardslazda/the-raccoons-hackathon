@@ -24,6 +24,17 @@
                     </div>
                 </div>
             </div>
+            <div class="landing__introduction d-flex justify-content-end">
+                <div>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not.
+                    <br/>
+                    <br/>
+                    <span>Visit the database <router-link style="font-weight: 800; text-transform: uppercase" v-bind:to="'asteroids'">Here</router-link> </span>
+                </div>
+                <div>
+                </div>
+            </div>
             <div class="asteroids">
                 <div class="solar_system">
                     <div>

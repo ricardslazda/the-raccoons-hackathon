@@ -1,13 +1,42 @@
 <template >
   <div class="asteroid-det">
-    <div class="btn btn-danger mt-5 ml-5" @click="$emit('close')">X</div>
-    <div>Valuation: <span>{{this.valuation}}</span></div>
-    <div>Class: <span>{{this.materialType}}</span></div>
-    <div>Distance to Earth: <span>{{this.distanceToEarth}}</span></div>
-    <div class="data__number">
-      {{this.id}}
+    <div class="data__close" @click="$emit('close')">X</div>
+    <div v-if="loading" class="d-flex justify-content-center align-items-center" style="height: 100%">
+      <div class="spinner-border" role="status" style="height: 100px; width: 100px">
+        <span class="sr-only">Loading...</span>
+      </div>
     </div>
-    <img src="../../public/images/composition/fe.png" height="75px"/>
+    <div :class="{'d-none': loading}" class="h-100">
+      <div v-if="!errored" class="h-100">
+        <div class="row h-100" >
+          <div class="col-lg-6 h-100">
+            <div class="data__information">
+            </div>
+            <div class="data__number">
+              {{this.id}}
+            </div>
+          </div>
+          <div class="col-lg-6 h-100 data__image">
+            <div class="h-100">
+              <img src="images/asteroid-background.jpg" alt="" class="h-100 w-100">
+            </div>
+            <div class="data__elements">
+              <img src="../../public/images/composition/fe.png" class="mr-2"/>
+              <img src="../../public/images/composition/al.png" class="mr-2"/>
+              <img src="../../public/images/composition/co.png" class="mr-2"/>
+              <img src="../../public/images/composition/h.png"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div v-else>
+        <div class="data__error d-flex justify-content-center align-items-center" style="height: 82vh">
+          <div>
+            {{errored}}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -21,14 +50,13 @@ export default {
       msg: "Asteroid Name",
       asteroid: null,
       loading: false,
-      errored: false,
       valuation: null,
       materialType: null,
       weight: null,
       distanceToEarth: null
     };
   },
-  props: ['id'],
+  props: ['id', 'errored'],
   mounted() {
     this.loading = true;
     Axios
@@ -49,11 +77,8 @@ export default {
 </script>
 <style>
 .asteroid-det{
-    background-color: rgba(00, 00, 00, 0.7);
-  height: 100%;
-  font-size: 2rem;
-}
-h1{
-    color: black;
+    background-color: gainsboro;
+    height: 100%;
+    font-size: 2rem;
 }
 </style>

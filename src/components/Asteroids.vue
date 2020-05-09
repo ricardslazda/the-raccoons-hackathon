@@ -1,11 +1,18 @@
 <template>
     <div>
-        <main style="height: 100vh">
+        <div v-if="loading" class="d-flex justify-content-center align-items-center" style="height: 100vh; width: 100vw">
+            <div class="spinner-border" role="status" style="height: 100px; width: 100px; color: black; margin-bottom: 10vh;">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <main style="height: 100vh" :class="{'d-none': loading}">
             <div class="search">
-                <div class="search-container">
-                    <input  v-model="search" id="searchBar" class="searchbar" type="text" placeholder="Search based on Asteroid ID..">
-                    <a id="btnSearch" v-on:click="searchPlanet" class="btn-search"><i class="fa fa-search"></i></a>
-                </div>
+                    <form v-on:submit.prevent="searchPlanet">
+                        <div class="search-container">
+                        <input  v-model="search" id="searchBar" class="searchbar" type="text" placeholder="Search based on Asteroid ID..">
+                        <a id="btnSearch" v-on:click="searchPlanet" class="btn-search"><i class="fa fa-search"></i></a>
+                        </div>
+                    </form>
             </div>
             <div class="asteroids d-flex justify-content-start">
                 <table class="asteroids__database">
@@ -22,7 +29,7 @@
                 </tr>
                 </thead>
                     <tbody>
-                    <tr :key="asteroid.id" v-for="asteroid in asteroids">
+                    <tr :key="asteroid.id" v-for="asteroid in asteroids" @click="openModal(asteroid.id)">
                         <th scope="row">{{asteroid.id}}</th>
                         <td>{{asteroid.price}}</td>
                         <td><div class="btn btn-warning rounded-pill p-3">X</div></td>
@@ -62,12 +69,20 @@
             searchPlanet: function () {
                 Axios
                     .get('http://www.asterank.com/api/asterank?query={%22id%22:{%22$eq%22:%22' + this.search + '%22}}&limit=1')
-                    .then(response => (this.query = response.data));
+                    .then(response => (this.query = response.data))
+                    .catch(error => {
+                        this.errored = error;
+                    this.errored = true
+                })
+                    .finally(() => this.loading = false);
                 this.openModal();
             },
-            openModal() {
-                const style = { width: "70%", height: "70%" };
-                this.$modal.show(Modal, {id: this.search}, style);
+            openModal(id) {
+                if (id){
+                    this.search = id;
+                }
+                const style = { width: "85%", height: "85%" };
+                this.$modal.show(Modal, {id: this.search, errors: this.errored}, style);
             }
         },
         mounted () {
