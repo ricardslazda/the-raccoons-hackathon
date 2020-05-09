@@ -25,46 +25,6 @@
                 </div>
             </div>
             <div class="asteroids">
-                <div class="showcase d-flex">
-                    <div>
-                        <p class="showcase__statement">
-                            5 Closest <br/> asteroids to earth
-                        </p>
-                        <ul class="showcase__list">
-                            <li class="showcase__list-item">
-                                <p>23323235</p>
-                                <div>
-                                    <button @click="openModal"><img src="images/asteroid.png" alt="" class="showcase__asteroid"/></button>
-                                    <modals-container class="asteroid-det" />
-                                </div>
-                            </li>
-                            <li class="showcase__list-item">
-                                <p>23323235</p>
-                                <div>
-                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
-                                </div>
-                            </li >
-                            <li class="showcase__list-item">
-                                <p>23323235</p>
-                                <div>
-                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
-                                </div>
-                            </li>
-                            <li class="showcase__list-item">
-                                <p>23323235</p>
-                                <div>
-                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
-                                </div>
-                            </li>
-                            <li class="showcase__list-item">
-                                <p>23323235</p>
-                                <div>
-                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="solar_system">
                     <div>
                         <img class="earth" src="images/earth.png" alt=""/>
@@ -91,59 +51,14 @@
                     </div>
                 </div>
             </div>
-            <div class="search">
-                    <div class="search-container">
-                        <input  v-model="search" id="searchBar" class="searchbar" type="text" placeholder="Search for Asteroid ID...">
-                        <a id="btnSearch" v-on:click="searchPlanet" class="btn-search"><i class="fa fa-search"></i></a>
-                    </div>
-            </div>
         </main>
     </div>
 </template>
 
 <script>
 
-    import Axios from "axios";
-    import Profile from "./Profile";
-
     export default {
         name: 'Landing',
-        data: function () {
-            return {
-                asteroids: null,
-                search: null,
-                loading: true,
-                errored: false
-            }
-        },
-        methods:{
-            searchPlanet: function () {
-                this.loading = true;
-                this.$router.push({ name: "asteroid", params: {id: this.search}});
-            },
-            openModal() {
-            const options = {};
-            const style = { width: "60%", height: "auto" };
-            const events = {};
-
-            this.$modal.show(Profile, options, style,events);
-            }
-        },
-        mounted () {
-            Axios
-                .get('https://www.asterank.com/api/asterank?query={%22price%22:{%22$gt%22:0.0}}&limit=100000')
-                .then(response => (this.asteroids = response.data))
-                .catch(function () {
-                    this.errored = true
-                })
-                .finally(() => this.loading = false)
-        }
     }
 </script>
-<style>
-    button{
-        background: none;
-        border: none;
-    }
-</style>
 

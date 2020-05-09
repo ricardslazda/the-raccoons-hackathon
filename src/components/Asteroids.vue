@@ -45,6 +45,7 @@
 <script>
 
     import Axios from "axios";
+    import Modal from "./Modal";
 
     export default {
         name: 'Landing',
@@ -53,13 +54,20 @@
                 asteroids: null,
                 search: null,
                 loading: true,
-                errored: false
+                errored: false,
+                query: null
             }
         },
         methods:{
             searchPlanet: function () {
-                this.loading = true;
-                this.$router.push({ name: "asteroid", params: {id: this.search}});
+                Axios
+                    .get('http://www.asterank.com/api/asterank?query={%22id%22:{%22$eq%22:%22' + this.search + '%22}}&limit=1')
+                    .then(response => (this.query = response.data));
+                this.openModal();
+            },
+            openModal() {
+                const style = { width: "70%", height: "70%" };
+                this.$modal.show(Modal, {id: this.search}, style);
             }
         },
         mounted () {
@@ -70,6 +78,7 @@
                     this.errored = true
                 })
                 .finally(() => this.loading = false)
-        }
+        },
+
     }
 </script>
