@@ -133,7 +133,7 @@
   text-transform: uppercase;
   letter-spacing: 5px;
   & div:first-child{
-    width: 35%;
+    width: 100%;
     margin-top: 20vh;
     margin-right: 13vh;
   }
@@ -163,3 +163,71 @@
     padding-bottom: 20px;
   }
 }
+.asteroids{
+  &__suitability{
+   &--lo{
+     text-transform: uppercase;
+     color: #E71919;
+     font-weight: 900;
+   }
+    &--me{
+      text-transform: uppercase;
+      color: blue;
+      font-weight: 900;
+    }
+    &--hi{
+      text-transform: uppercase;
+      color: limegreen;
+      font-weight: 900;
+    }
+  }
+   &__database{
+     margin-top: 10vh;
+     width: 80vw;
+     height: 75vh;
+     margin-left: 14vh;
+     & thead{
+       & th{
+         border-bottom: 2px solid black;
+         text-transform: uppercase;
+         font-weight: 700;
+         font-family: 'Lucida', sans-serif;
+         letter-spacing: 3px;
+         padding: 1.5rem 1.5rem;
+         overflow: hidden;
+         word-break: normal;
+         color: black;
+         background-color: white;
+         text-align: center;
+         font-size: 1.8rem;
+       }
+     }
+     & tbody{
+       & tr{
+         & th{
+           font-size: 1.5rem;
+           text-transform: uppercase;
+           border-bottom: 1px solid gainsboro;
+           box-sizing: border-box;
+           text-align: center;
+           letter-spacing: 2px;
+           font-weight: 700;
+           font-family: 'Lucida', sans-serif;
+           color: black;
+           background-color: white;
+         }
+         & td{
+           border-bottom: 1px solid gainsboro;
+           color: black;
+           background-color: white;
+           box-sizing: border-box;
+           text-align: center;
+           font-size: 1.2rem;
+           letter-spacing: 2px;
+           font-weight: 700;
+           font-family: 'Lucida', sans-serif;
+         }
+       }
+     }
+   }
+ }

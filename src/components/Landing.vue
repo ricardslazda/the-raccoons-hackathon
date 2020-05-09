@@ -25,43 +25,9 @@
                 </div>
             </div>
             <div class="asteroids">
-                <div class="showcase d-flex">
+                <div class="">
                     <div>
-                        <p class="showcase__statement">
-                            5 Closest <br/> asteroids to earth
-                        </p>
-                        <ul class="showcase__list">
-                            <li class="showcase__list-item">
-                                <p>23323235</p>
-                                <div>
-                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
-                                </div>
-                            </li>
-                            <li class="showcase__list-item">
-                                <p>23323235</p>
-                                <div>
-                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
-                                </div>
-                            </li >
-                            <li class="showcase__list-item">
-                                <p>23323235</p>
-                                <div>
-                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
-                                </div>
-                            </li>
-                            <li class="showcase__list-item">
-                                <p>23323235</p>
-                                <div>
-                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
-                                </div>
-                            </li>
-                            <li class="showcase__list-item">
-                                <p>23323235</p>
-                                <div>
-                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
-                                </div>
-                            </li>
-                        </ul>
+                        <div class="btn btn-primary">Asteroids</div>
                     </div>
                 </div>
                 <div class="solar_system">
@@ -89,12 +55,6 @@
                         <img src="images/asteroid.png" class="asteroid asteroid-5" alt=""/>
                     </div>
                 </div>
-            </div>
-            <div class="search">
-                    <div class="search-container">
-                        <input  v-model="search" id="searchBar" class="searchbar" type="text" placeholder="Search for Asteroid ID...">
-                        <a id="btnSearch" v-on:click="searchPlanet" class="btn-search"><i class="fa fa-search"></i></a>
-                    </div>
             </div>
         </main>
     </div>
