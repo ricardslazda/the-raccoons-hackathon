@@ -23,11 +23,12 @@ MongoClient.connect(connectionString, {useUnifiedTopology: true}).then(client =>
     const Astcollection = db.collection('asteroids')
 
     app.get('/asteroids', (req, res) => {
-	  const cursor = db.collection('asteroids').find().toArray()
+	  const cur = db.collection('asteroids').find({"asteroidID":req.query.id}).toArray()
     .then(results => {
-      console.log(results)
-      console.log(results.sustain)
+      console.log(results);
+      res.send(results)
     })
+    
     .catch(error => console.error(error))
 	  })
   })
