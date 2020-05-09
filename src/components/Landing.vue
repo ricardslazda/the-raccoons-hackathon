@@ -34,7 +34,8 @@
                             <li class="showcase__list-item">
                                 <p>23323235</p>
                                 <div>
-                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
+                                    <button @click="openModal"><img src="images/asteroid.png" alt="" class="showcase__asteroid"/></button>
+                                    <modals-container class="asteroid-det" />
                                 </div>
                             </li>
                             <li class="showcase__list-item">
@@ -103,6 +104,7 @@
 <script>
 
     import Axios from "axios";
+    import Profile from "./Profile";
 
     export default {
         name: 'Landing',
@@ -118,6 +120,13 @@
             searchPlanet: function () {
                 this.loading = true;
                 this.$router.push({ name: "asteroid", params: {id: this.search}});
+            },
+            openModal() {
+            const options = {};
+            const style = { width: "60%", height: "auto" };
+            const events = {};
+
+            this.$modal.show(Profile, options, style,events);
             }
         },
         mounted () {
@@ -131,4 +140,10 @@
         }
     }
 </script>
+<style>
+    button{
+        background: none;
+        border: none;
+    }
+</style>
 
