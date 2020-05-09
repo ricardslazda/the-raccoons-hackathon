@@ -13,14 +13,47 @@
   }
   &__number{
     font-weight: 700;
-    font-size: 18rem;
+    font-size: 8rem;
     letter-spacing: 19px;
     font-family: 'Lucida', sans-serif;
     color: tan;
     text-transform: uppercase;
-    opacity: .7;
+    opacity: .9;
     position: absolute;
     bottom: 0;
     left: 5vh;
+  }
+  &__close{
+    color: black;
+    font-size: 3rem;
+    font-weight: 700;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    font-family: 'Lucida', sans-serif;
+    z-index: 10;
+    cursor: pointer;
+  }
+  &__error{
+    & div {
+      letter-spacing: 9px;
+      font-family: 'Lucida', sans-serif;
+      font-size: 5rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+  &__image{
+    & div img{
+      object-fit: cover;
+    }
+  }
+  &__elements{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    & img {
+      height: 60px;
+    }
   }
 }
