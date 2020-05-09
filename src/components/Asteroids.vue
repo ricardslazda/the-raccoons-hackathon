@@ -25,12 +25,12 @@
                     <tr :key="asteroid.id" v-for="asteroid in asteroids">
                         <th scope="row">{{asteroid.id}}</th>
                         <td>{{asteroid.price}}</td>
-                        <td><div class="btn btn-warning rounded-pill p-3">X</div></td>
+                        <td><div class="btn btn-warning rounded-pill p-3">{{asteroid.spec}}</div></td>
                         <td><span class="asteroids__status--uns asteroids__status">Unsuitable</span></td>
-                        <td>>Abdim</td>
+                        <td>{{asteroid.producer}}</td>
                         <td><span class="asteroids__suitability--hi">Medium</span></td>
                         <td>{{asteroid.closeness}}</td>
-                        <td>{{asteroid.name}}</td>
+                        <td>{{asteroid.full_name}}</td>
                     </tr>
                     </tbody>
                 </table>
