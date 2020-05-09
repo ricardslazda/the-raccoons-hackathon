@@ -47,6 +47,9 @@
     <img src="../../public/images/composition/nh.png" height="150px"/>
     <img src="../../public/images/composition/n.png" height="150px"/>
   </div>
+  <div v-else>
+    <img src="../../public/images/composition/unknown.png" height="150px"/>
+  </div>
   
   
     <div class="data__number">
@@ -110,6 +113,9 @@ export default {
               }
               else if(this.asteroid[0].spec=='B'){
                 this.comp="Iron, Hydrogen, Ammonia, Nitrogen";
+              }
+              else{
+                this.comp="Unknown";
               }
             })
             // eslint-disable-next-line no-unused-vars
