@@ -12,22 +12,57 @@
                 </div>
                 <div class="container landing">
                     <div class="landing__intro">
-                        Space is the future, the no doubt about that. People will become multiasteroidary
-                        species. <br/><br/>
-                        That's why we SpaceMine will help find the right asteroids to mine.
+                        Without a doubt, outer space is the future. We will become multiplanetary
+                        species. Asteroids hold a vast amount of resources. <br/><br/>
+                        SpaceMine is here to help you jump-start your multiplanetary life!
                     </div>
                     <div class="row d-flex justify-content-center flex-column landing__text">
                         <div class="text-enter">
                             We help you
                         </div>
-                        <div class="text-enter">Mine</div>
+                        <div class="text-enter">mine the right asteroids</div>
                     </div>
                 </div>
             </div>
             <div class="asteroids">
-                <div class="">
+                <div class="showcase d-flex">
                     <div>
-                        <div class="btn btn-primary">Asteroids</div>
+                        <p class="showcase__statement">
+                            5 Closest <br/> asteroids to earth
+                        </p>
+                        <ul class="showcase__list">
+                            <li class="showcase__list-item">
+                                <p>23323235</p>
+                                <div>
+                                    <button @click="openModal"><img src="images/asteroid.png" alt="" class="showcase__asteroid"/></button>
+                                    <modals-container class="asteroid-det" />
+                                </div>
+                            </li>
+                            <li class="showcase__list-item">
+                                <p>23323235</p>
+                                <div>
+                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
+                                </div>
+                            </li >
+                            <li class="showcase__list-item">
+                                <p>23323235</p>
+                                <div>
+                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
+                                </div>
+                            </li>
+                            <li class="showcase__list-item">
+                                <p>23323235</p>
+                                <div>
+                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
+                                </div>
+                            </li>
+                            <li class="showcase__list-item">
+                                <p>23323235</p>
+                                <div>
+                                    <img src="images/asteroid.png" alt="" class="showcase__asteroid"/>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="solar_system">
@@ -56,6 +91,12 @@
                     </div>
                 </div>
             </div>
+            <div class="search">
+                    <div class="search-container">
+                        <input  v-model="search" id="searchBar" class="searchbar" type="text" placeholder="Search for Asteroid ID...">
+                        <a id="btnSearch" v-on:click="searchPlanet" class="btn-search"><i class="fa fa-search"></i></a>
+                    </div>
+            </div>
         </main>
     </div>
 </template>
@@ -63,6 +104,7 @@
 <script>
 
     import Axios from "axios";
+    import Profile from "./Profile";
 
     export default {
         name: 'Landing',
@@ -78,6 +120,13 @@
             searchPlanet: function () {
                 this.loading = true;
                 this.$router.push({ name: "asteroid", params: {id: this.search}});
+            },
+            openModal() {
+            const options = {};
+            const style = { width: "60%", height: "auto" };
+            const events = {};
+
+            this.$modal.show(Profile, options, style,events);
             }
         },
         mounted () {
@@ -91,4 +140,10 @@
         }
     }
 </script>
+<style>
+    button{
+        background: none;
+        border: none;
+    }
+</style>
 
