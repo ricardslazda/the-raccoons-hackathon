@@ -20,7 +20,7 @@ export default {
 .asteroid-det{
     background-color: rgba(00, 00, 00, 0.7);
 }
-h1{
+h1,h2{
     color: black;
 }
 </style>
