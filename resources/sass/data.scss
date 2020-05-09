@@ -1,0 +1,26 @@
+.data{
+  &__hero{
+    background: url(../images/asteroid-background.gif) center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    font-weight: 700;
+    font-size: 4rem;
+    letter-spacing: 7px;
+    font-family: 'Lucida', sans-serif;
+    color: tan;
+    text-transform: uppercase;
+  }
+  &__number{
+    font-weight: 700;
+    font-size: 18rem;
+    letter-spacing: 19px;
+    font-family: 'Lucida', sans-serif;
+    color: tan;
+    text-transform: uppercase;
+    opacity: .7;
+    position: absolute;
+    bottom: 0;
+    left: 5vh;
+  }
+}

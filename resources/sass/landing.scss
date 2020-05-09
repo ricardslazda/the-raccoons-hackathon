@@ -1,0 +1,49 @@
+.landing{
+  padding-top: 25vh;
+  &__text{
+    font-family: 'Lucida', sans-serif;
+    padding-top: 15vh;
+    font-size: 3rem;
+    color: $color-text;
+    text-transform: uppercase;
+    & div:first-child{
+      font-weight: 500;
+      font-size: 14rem;
+      letter-spacing: 2px;
+    }
+    & div:last-child{
+      font-weight: 700;
+      font-size: 22rem;
+      letter-spacing: 7px;
+    }
+  }
+  &__logo{
+    position: absolute;
+    z-index: 10;
+    top: 5vh;
+    left: 5vh;
+    & img {
+      height: 60px;
+    }
+  }
+  &__hero{
+    background: url(../images/background.jpg) center no-repeat;
+    background-size: cover;
+    height: 1000px;
+    position: relative;
+    color: #ffffff;
+  }
+  &__intro{
+    font-family: 'Lucida', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 10px;
+  }
+  &__number{
+    position: absolute;
+    right: 3vh;
+    transform: rotate(90deg);
+    top: 20vh;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+  }
+}
