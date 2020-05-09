@@ -12,15 +12,15 @@
                 </div>
                 <div class="container landing">
                     <div class="landing__intro">
-                        Space is the future, the no doubt about that. People will become multiasteroidary
-                        species. <br/><br/>
-                        That's why we SpaceMine will help find the right asteroids to mine.
+                        Without a doubt, outer space is the future. We will become multiplanetary
+                        species. Asteroids hold a vast amount of resources. <br/><br/>
+                        SpaceMine is here to help you jump-start your multiplanetary life!
                     </div>
                     <div class="row d-flex justify-content-center flex-column landing__text">
                         <div class="text-enter">
                             We help you
                         </div>
-                        <div class="text-enter">Mine</div>
+                        <div class="text-enter">mine the right asteroids</div>
                     </div>
                 </div>
             </div>

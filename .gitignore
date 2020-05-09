@@ -21,3 +21,4 @@ yarn-error.log*
 *.sw?
 
 public/css/app.css
+node_modules
