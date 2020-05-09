@@ -24,7 +24,7 @@
     <img src="../../public/images/composition/h.png" height="150px"/>
     <img src="../../public/images/composition/nh.png" height="150px"/>
   </div>
-  <div v-if="(materialType.includes('X',0)&& materialType&&'Xc')">
+  <div v-if="(materialType.includes('X',0)&& materialType!='Xc')">
     <img src="../../public/images/composition/ni.png" height="150px"/>
     <img src="../../public/images/composition/fe.png" height="150px"/>
     <img src="../../public/images/composition/co.png" height="150px"/>
@@ -47,7 +47,7 @@
     <img src="../../public/images/composition/nh.png" height="150px"/>
     <img src="../../public/images/composition/n.png" height="150px"/>
   </div>
-  <div v-else>
+  <div v-if="(!materialType.includes('S',0)&& !materialType.includes('V',0)&& materialType!='R'&& !materialType.includes('L',0) && !materialType.includes('C',0) && !materialType.includes('K',0)&& materialType!='R' && !materialType.includes('X',0)&& materialType!='Xc' && materialType!='D' && materialType!='T' && materialType!='B')">
     <img src="../../public/images/composition/unknown.png" height="150px"/>
   </div>
   

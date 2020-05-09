@@ -1,12 +1,7 @@
 <template>
     <div>
         <main style="height: 100vh">
-            <div class="search">
-                <div class="search-container">
-                    <input  v-model="search" id="searchBar" class="searchbar" type="text" placeholder="Search by resource..">
-                    <a id="btnSearch" v-on:click="searchQ" class="btn-search"><i class="fa fa-search"></i></a>
-                </div>
-            </div>
+
             <div class="asteroids d-flex justify-content-start">
                 <table class="asteroids__database">
                 <thead>
@@ -23,7 +18,7 @@
                 </thead>
                     <tbody>
                     <tr :key="asteroid.id" v-for="asteroid in asteroids">
-                        <th scope="row">{{asteroid.id}}</th>
+                        <th scope="row"><a id="btnSearch" v-on:click="searchPlanet(asteroid.id)" class="btn-search">{{asteroid.id}}</a></th>
                         <td>{{asteroid.price}}</td>
                         <td><div class="btn btn-warning rounded-pill p-3">{{asteroid.spec}}</div></td>
                         <td><span class="asteroids__status--uns asteroids__status">Unsuitable</span></td>
@@ -59,17 +54,18 @@
             }
         },
         methods:{
-            searchQ: function () {
-                if(this.search=='S'){
+            searchPlanet: function (search) { 
                 Axios
-                    .get('http://www.asterank.com/api/asterank?query={%22spec%22:{%22$eq%22:%22' + this.search + '%22}}&limit=1')
-                    .then(response => (this.query = response.data));
-                this.openModal();
-                }
+                    .get('http://www.asterank.com/api/asterank?query={%22id%22:{%22$eq%22:%22' + search + '%22}}&limit=1')
+                    .then(response => (this.query = response.data))
+                console.log(search);
+                this.openModal(search);
+                
             },
-            openModal() {
+            openModal(search) {
                 const style = { width: "70%", height: "70%" };
-                this.$modal.show(Modal, {spec: this.search}, style);
+                this.$modal.show(Modal, {id: search}, style);
+                
             }
         },
         mounted () {
@@ -81,6 +77,7 @@
                 })
                 .finally(() => this.loading = false)
         },
+        
 
     }
 </script>
