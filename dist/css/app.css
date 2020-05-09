@@ -1,0 +1,403 @@
+@font-face {
+  font-family: 'LucidaBold';
+  src: url("fonts/LucidaSansTypewriterBold.woff2") format("woff2"), url("fonts/LucidaSansTypewriterBold.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Lucida';
+  src: url("fonts/LucidaSansTypewriterRegular.woff2") format("woff2"), url("fonts/LucidaSansTypewriterRegular.woff") format("woff"); }
+
+.landing {
+  padding-top: 25vh; }
+  .landing__text {
+    font-family: 'Lucida', sans-serif;
+    padding-top: 15vh;
+    font-size: 3rem;
+    color: #F0F8FF;
+    text-transform: uppercase; }
+    .landing__text div:first-child {
+      font-weight: 500;
+      font-size: 14rem;
+      letter-spacing: 2px; }
+    .landing__text div:last-child {
+      font-weight: 700;
+      font-size: 10rem;
+      letter-spacing: 7px; }
+  .landing__logo {
+    position: absolute;
+    z-index: 10;
+    top: 5vh;
+    left: 5vh; }
+    .landing__logo img {
+      height: 60px; }
+  .landing__hero {
+    background: url(../images/background.jpg) center no-repeat;
+    background-size: cover;
+    height: 1000px;
+    position: relative;
+    color: #ffffff; }
+  .landing__intro {
+    font-family: 'Lucida', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 10px; }
+  .landing__number {
+    position: absolute;
+    right: 3vh;
+    transform: rotate(90deg);
+    top: 20vh;
+    font-size: 1.5rem;
+    letter-spacing: 3px; }
+  .landing__introduction div:first-child {
+    width: 38%;
+    font-size: 2rem;
+    margin-top: 40vh;
+    margin-right: 10vh;
+    font-family: 'Lucida', sans-serif;
+    letter-spacing: 3px; }
+
+.solar_system {
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+  top: 180%;
+  left: 50%;
+  padding-top: 24vh;
+  transform: translate(-90vh, -70vh) scale(0.7); }
+
+.earth {
+  height: 400px;
+  border-radius: 50%;
+  position: absolute;
+  top: 72%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.orbit {
+  border-radius: 50%;
+  border: 1px solid gray;
+  position: absolute; }
+
+.asteroid {
+  position: absolute;
+  border-radius: 50%; }
+
+.orbit_1 {
+  width: 500px;
+  height: 500px;
+  margin: 250px;
+  -webkit-animation: spin 10s infinite linear;
+  z-index: 9; }
+
+.asteroid-1 {
+  top: 85px;
+  left: 31px;
+  height: 35px; }
+
+.label-1 {
+  font-family: 'Lucida', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  transform: translateY(40px); }
+
+.orbit_2 {
+  width: 600px;
+  height: 600px;
+  margin: 200px;
+  -webkit-animation: spin 15s infinite linear;
+  z-index: 8; }
+
+.label-2 {
+  font-family: 'Lucida', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  transform: translateY(40px);
+  padding-left: 5px; }
+
+.asteroid-2 {
+  top: 85px;
+  left: 40px;
+  height: 50px; }
+
+.orbit_3 {
+  width: 700px;
+  height: 700px;
+  margin: 150px;
+  -webkit-animation: spin 18s infinite linear;
+  z-index: 7; }
+
+.asteroid-3 {
+  top: 90px;
+  left: 48px;
+  height: 70px; }
+
+.label-3 {
+  font-family: 'Lucida', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  transform: translateY(50px);
+  padding-left: 16px; }
+
+.orbit_4 {
+  width: 850px;
+  height: 850px;
+  margin: 80px;
+  -webkit-animation: spin 24s infinite linear;
+  z-index: 6; }
+
+.label-4 {
+  transform: translateY(80px);
+  font-size: 2rem;
+  padding-left: 41px;
+  font-family: 'Lucida', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 10px; }
+
+.asteroid-4 {
+  top: 120px;
+  left: 56px;
+  height: 70px; }
+
+.orbit_5 {
+  width: 1000px;
+  height: 1000px;
+  -webkit-animation: spin 30s infinite linear;
+  z-index: 5; }
+
+.asteroid-5 {
+  top: 120px;
+  left: 65px;
+  height: 100px; }
+
+.label-5 {
+  font-family: 'Lucida', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  transform: translateY(70px);
+  padding-left: 41px; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+.showcase {
+  color: #F0F8FF;
+  justify-content: flex-end;
+  font-family: 'Lucida', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px; }
+  .showcase div:first-child {
+    width: 100%;
+    margin-top: 20vh;
+    margin-right: 13vh; }
+  .showcase__asteroid {
+    height: 100px;
+    display: block; }
+  .showcase__list {
+    list-style-type: none; }
+  .showcase__list-item {
+    font-weight: 600;
+    font-size: 2rem;
+    padding-bottom: 10px; }
+    .showcase__list-item p {
+      text-align: center; }
+    .showcase__list-item div {
+      display: flex;
+      justify-content: center; }
+  .showcase__statement {
+    font-weight: 900;
+    font-size: 3.5rem;
+    text-align: center;
+    padding-bottom: 20px; }
+
+.asteroids__suitability--lo {
+  text-transform: uppercase;
+  color: #E71919;
+  font-weight: 900; }
+
+.asteroids__suitability--me {
+  text-transform: uppercase;
+  color: blue;
+  font-weight: 900; }
+
+.asteroids__suitability--hi {
+  text-transform: uppercase;
+  color: limegreen;
+  font-weight: 900; }
+
+.asteroids__database {
+  margin-top: 10vh;
+  width: 80vw;
+  height: 75vh;
+  margin-left: 14vh; }
+  .asteroids__database thead th {
+    border-bottom: 2px solid black;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Lucida', sans-serif;
+    letter-spacing: 3px;
+    padding: 1.5rem 1.5rem;
+    overflow: hidden;
+    word-break: normal;
+    color: black;
+    background-color: white;
+    text-align: center;
+    font-size: 1.8rem; }
+  .asteroids__database tbody tr:hover td, .asteroids__database tbody tr:hover th {
+    background-color: gainsboro;
+    cursor: pointer; }
+  .asteroids__database tbody tr th {
+    font-size: 1.5rem;
+    border-bottom: 1px solid gainsboro;
+    box-sizing: border-box;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-family: 'Lucida', sans-serif;
+    color: black;
+    background-color: white; }
+  .asteroids__database tbody tr td {
+    border-bottom: 1px solid gainsboro;
+    color: black;
+    background-color: white;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-family: 'Lucida', sans-serif; }
+
+.search {
+  width: 400px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: white;
+  color: black;
+  border-top-left-radius: 20px; }
+
+.data__hero {
+  background: url(../images/asteroid-background.gif) center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  font-weight: 700;
+  font-size: 4rem;
+  letter-spacing: 7px;
+  font-family: 'Lucida', sans-serif;
+  color: tan;
+  text-transform: uppercase; }
+
+.data__number {
+  font-weight: 700;
+  font-size: 8rem;
+  letter-spacing: 19px;
+  font-family: 'Lucida', sans-serif;
+  color: tan;
+  text-transform: uppercase;
+  opacity: .9;
+  position: absolute;
+  bottom: 0;
+  left: 5vh; }
+
+.data__close {
+  color: black;
+  font-size: 3rem;
+  font-weight: 700;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  font-family: 'Lucida', sans-serif;
+  z-index: 10;
+  cursor: pointer; }
+
+.data__error div {
+  letter-spacing: 9px;
+  font-family: 'Lucida', sans-serif;
+  font-size: 5rem;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+.data__image div img {
+  object-fit: cover; }
+
+.data__elements {
+  position: absolute;
+  top: 20px;
+  right: 40px; }
+  .data__elements img {
+    height: 60px; }
+
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -10000px 5000px; } }
+
+html {
+  font-size: 10px; }
+
+body {
+  font-family: 'Open Sans', sans-serif !important; }
+
+.stars, .twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 235%;
+  display: block;
+  z-index: -2; }
+
+.stars {
+  background: #000 url(../images/stars.png) repeat top center; }
+
+.twinkling {
+  background: transparent url(../images/twinkling.png) repeat top center;
+  animation: move-twink-back 400s linear infinite; }
+
+body {
+  color: white; }
+
+.searchbar {
+  float: right;
+  background-color: transparent;
+  color: black;
+  padding: 6px 10px;
+  width: 300px;
+  border: none;
+  margin-top: 1px;
+  margin-right: 8px;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-bottom: black solid 2px;
+  transition: 0.3s; }
+
+.searchbar::placeholder {
+  color: black;
+  opacity: .5;
+  font-size: 1em;
+  font-weight: bold; }
+
+.searchbar:focus {
+  font-weight: bold;
+  transition: 0.3s;
+  outline: none; }
+
+.btn-search {
+  cursor: pointer;
+  color: black;
+  text-decoration: none !important;
+  font-size: 1.5em;
+  padding-top: 5px;
+  margin-right: 40px; }
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
+  padding-bottom: 15px;
+  padding-top: 10px; }
