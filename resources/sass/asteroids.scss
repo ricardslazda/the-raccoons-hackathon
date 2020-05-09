@@ -181,10 +181,10 @@
     }
   }
    &__database{
-     margin-top: 10vh;
-     width: 80vw;
-     height: 75vh;
-     margin-left: 14vh;
+     margin-top: 6vh;
+     width: 40vw;
+     height: 85vh;
+     margin-left: 7vh;
      & thead{
        & th{
          border-bottom: 2px solid black;
@@ -232,4 +232,80 @@
        }
      }
    }
+  &__input{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1.5rem;
+    height: 2.5em;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding: calc(.5em - 1px) calc(.75em - 1px);
+    position: relative;
+    vertical-align: top;
+    }
+  &__label{
+    color: #b5b5b5!important;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+  &__calculations{
+    margin-top: 10vh;
+    width: 40vw;
+    height: 85vh;
+    margin-left: 7vh;
+    & thead{
+      & th{
+        border-top: 2px solid gainsboro;
+        border-bottom: 2px solid gainsboro;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-family: 'Lucida', sans-serif;
+        letter-spacing: 3px;
+        padding: 1.5rem 1.5rem;
+        overflow: hidden;
+        word-break: normal;
+        color: black;
+        background-color: white;
+        text-align: center;
+        font-size: 1.8rem;
+        width: 50px;
+      }
+    }
+    & tbody{
+      & tr{
+        &:hover td,  &:hover th{
+          background-color: gainsboro;
+          cursor: pointer;
+        }
+        & th{
+          font-size: 1.5rem;
+          border-bottom: 1px solid gainsboro;
+          box-sizing: border-box;
+          text-align: center;
+          letter-spacing: 2px;
+          font-weight: 700;
+          font-family: 'Lucida', sans-serif;
+          color: black;
+          background-color: white;
+        }
+        & td{
+          border-bottom: 1px solid gainsboro;
+          color: black;
+          background-color: white;
+          box-sizing: border-box;
+          text-align: center;
+          font-size: 1.2rem;
+          letter-spacing: 2px;
+          font-weight: 700;
+          font-family: 'Lucida', sans-serif;
+        }
+      }
+    }
+  }
  }

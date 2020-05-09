@@ -9,16 +9,11 @@
     <div :class="{'d-none': loading}" class="h-100">
       <div v-if="!errored" class="h-100">
         <div class="row h-100" >
-          <div class="col-lg-6 h-100">
+          <div class="col-lg-12 h-100">
             <div class="data__information">
             </div>
             <div class="data__number">
               {{this.id}}
-            </div>
-          </div>
-          <div class="col-lg-6 h-100 data__image">
-            <div class="h-100">
-              <img src="images/asteroid-background.jpg" alt="" class="h-100 w-100">
             </div>
             <div class="data__elements">
               <img src="../../public/images/composition/fe.png" class="mr-2"/>
