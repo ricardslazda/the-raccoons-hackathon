@@ -3,8 +3,8 @@
         <main style="height: 100vh">
             <div class="search">
                 <div class="search-container">
-                    <input  v-model="search" id="searchBar" class="searchbar" type="text" placeholder="Search based on Asteroid ID..">
-                    <a id="btnSearch" v-on:click="searchPlanet" class="btn-search"><i class="fa fa-search"></i></a>
+                    <input  v-model="search" id="searchBar" class="searchbar" type="text" placeholder="Search by resource..">
+                    <a id="btnSearch" v-on:click="searchQ" class="btn-search"><i class="fa fa-search"></i></a>
                 </div>
             </div>
             <div class="asteroids d-flex justify-content-start">
@@ -15,7 +15,7 @@
                     <th scope="col">Valuation</th>
                     <th scope="col">Class</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Owner</th>
+                    <th scope="col">Producer</th>
                     <th scope="col">Suitability</th>
                     <th scope="col">Temperature</th>
                     <th scope="col">Name</th>
@@ -59,20 +59,22 @@
             }
         },
         methods:{
-            searchPlanet: function () {
+            searchQ: function () {
+                if(this.search=='S'){
                 Axios
-                    .get('http://www.asterank.com/api/asterank?query={%22id%22:{%22$eq%22:%22' + this.search + '%22}}&limit=1')
+                    .get('http://www.asterank.com/api/asterank?query={%22spec%22:{%22$eq%22:%22' + this.search + '%22}}&limit=1')
                     .then(response => (this.query = response.data));
                 this.openModal();
+                }
             },
             openModal() {
                 const style = { width: "70%", height: "70%" };
-                this.$modal.show(Modal, {id: this.search}, style);
+                this.$modal.show(Modal, {spec: this.search}, style);
             }
         },
         mounted () {
             Axios
-                .get('https://www.asterank.com/api/asterank?query={%22price%22:{%22$gt%22:0.0}}&limit=7')
+                .get('https://www.asterank.com/api/asterank?query={%22price%22:{%22$gt%22:0.0}}&limit=20')
                 .then(response => (this.asteroids = response.data))
                 .catch(function () {
                     this.errored = true
