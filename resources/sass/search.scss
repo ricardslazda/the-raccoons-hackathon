@@ -1,5 +1,8 @@
 .search{
-  &__hero{
-    margin-top: 190vh;
-  }
+  width: 600px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: white;
+  color: black;
 }
