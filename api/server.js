@@ -28,9 +28,17 @@ MongoClient.connect(connectionString, {useUnifiedTopology: true}).then(client =>
       console.log(results);
       res.send(results)
     })
-    
     .catch(error => console.error(error))
-	  })
+    })
+    
+    app.get('/composition', (req, res) => {
+      const cur = db.collection('composition').find({"class":req.query.type}).toArray()
+      .then(results => {
+        console.log(results);
+        res.send(results)
+      })
+      .catch(error => console.error(error))
+      })
   })
   .catch(error => console.error(error))
 
