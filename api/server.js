@@ -23,14 +23,27 @@ MongoClient.connect(connectionString, {useUnifiedTopology: true}).then(client =>
     const Astcollection = db.collection('asteroids')
 
     app.get('/asteroids', (req, res) => {
-	  const cur = db.collection('asteroids').find({"asteroidID":req.query.id}).toArray()
-    .then(results => {
-      console.log(results);
-      res.send(results)
+      if (req.query.id != undefined){
+        const cur = db.collection('asteroids').find({"asteroidID":req.query.id}).toArray()
+        .then(results => {
+          res.send(results);
+        }).catch(error => console.error(error))
+      }
+      else {
+        const cur = db.collection('asteroids').find().toArray()
+        .then(results => {
+          res.send(results);
+        }).catch(error => console.error(error))
+      }
     })
     
-    .catch(error => console.error(error))
-	  })
+    app.get('/composition', (req, res) => {
+      const cur = db.collection('composition').find({"class":req.query.type}).toArray()
+      .then(results => {
+        res.send(results)
+      })
+      .catch(error => console.error(error))
+      })
   })
   .catch(error => console.error(error))
 
