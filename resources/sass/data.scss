@@ -51,9 +51,26 @@
   &__information{
     font-size: 2.2rem;
     font-family: 'Lucida', sans-serif;
+    padding-left: 50px;
     & div{
       width: 50%;
     }
+  }
+  &__sidebar{
+    z-index: 100;
+    position: absolute;
+    left: 35px;
+    top: 35px;
+    & img {
+      height: 50px;
+    }
+  }
+  &__title{
+    font-family: 'Lucida', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    font-weight: 600;
+    font-size: 3rem;
   }
   &__value{
     font-size: 2.2rem;
@@ -89,5 +106,45 @@
     & img {
       height: 60px;
     }
+  }
+  &__back{
+    position: absolute;
+    bottom: 40px;
+    left: 30%;
+    & a {
+      color: white;
+      font-size: 2rem;
+      font-family: 'Lucida', sans-serif;
+      font-weight: 500;
+      letter-spacing: 3px;
+      &:hover{
+        color: gainsboro;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.bi-x{
+  height: 50px;
+  width: 50px;
+  padding-top: 10px;
+  margin-top: 13px;
+  margin-left: 7px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+#sidebar-right___title__{
+  display: none;
+}
+.b-sidebar{
+  width: 280px !important;
+  &-right{
+    left: 0 !important;
+  }
+}
+.b-sidebar-body{
+  & div img{
+    cursor: pointer;
   }
 }

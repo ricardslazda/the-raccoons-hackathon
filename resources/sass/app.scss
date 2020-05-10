@@ -24,6 +24,10 @@ body{
   font-family: 'Open Sans', sans-serif !important;
   color: black;
 }
+.search{
+  right: 12%;
+  top: 10px !important;
+}
 .stars, .twinkling {
   position:absolute;
   top:0;
@@ -88,4 +92,7 @@ body{
   align-items: baseline;
   padding-bottom: 15px;
   padding-top: 10px;
+}
+.search{
+  top: 16vh !important;
 }

@@ -5,7 +5,32 @@
                 <span class="sr-only" style="color: black">Loading...</span>
             </div>
         </div>
+        <div>
+            <b-button class="data__sidebar" v-b-toggle.sidebar-right><img src="https://img.icons8.com/ios-filled/75/000000/menu.png"/></b-button>
+            <b-sidebar id="sidebar-right" title="Browse by Resource" left bg-variant="dark" text-variant="light" shadow>
+                <div class="px-3 py-2" style="text-align: center; margin-top: 8vh;">
+                    <img src="../../public/images/composition/co.png" height=75px style="margin:10px"/>
+                    <img src="../../public/images/composition/fe.png" height=75px style="margin:10px"/> <br>
+                    <img src="../../public/images/composition/ni.png" height=75px style="margin:10px"/>
+                    <img src="../../public/images/composition/n.png" height=75px style="margin:10px"/> <br>
+                    <img src="../../public/images/composition/h.png" height=75px style="margin:10px"/>
+                    <img src="../../public/images/composition/ho.png" height=75px style="margin:10px"/> <br>
+                    <img src="../../public/images/composition/pt.png" height=75px style="margin:10px"/>
+                    <img src="../../public/images/composition/al.png" height=75px style="margin:10px"/> <br>
+                    <img src="../../public/images/composition/nh.png" height=75px style="margin:10px"/>
+                    <img src="../../public/images/composition/nife.png" height=75px style="margin:10px"/> <br>
+                    <img src="../../public/images/composition/fesio.png" height=75px style="margin:10px"/>
+                    <img src="../../public/images/composition/mgosi.png" height=75px style="margin:10px"/>
+                </div>
+                <div class="data__back">
+                    <router-link class="pl-4" :to="'/'">Home</router-link>
+                </div>
+            </b-sidebar>
+        </div>
         <main style="height: 100vh; width: 100%; overflow: hidden;" :class="{'d-none': loading}">
+            <div class="text-center mt-5 data__title">
+                <h1>Asteroid Mining Analytics</h1>
+            </div>
             <div class="search">
                     <form v-on:submit.prevent="searchPlanet">
                         <div class="search-container">
@@ -30,10 +55,15 @@
                             <tbody>
                             <tr :key="asteroid.id" v-for="asteroid in asteroids" @click="openModal(asteroid.id)">
                                 <th scope="row">{{asteroid.id}}</th>
+
                                 <td><span class="asteroids__suitability--me">Sustainable</span></td>
                                 <td><span class="asteroids__suitability--hi">Good</span></td>
-                                <td><span class="asteroids__suitability--lo">High</span></td>
-                                <td>7.32</td>
+                                <td>
+                                    <span class="asteroids__suitability--lo">
+                                        High
+                                    </span>
+                                </td>
+                                <td>{{((Math.random() * 9.00) + 1).toFixed(2)}}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -42,7 +72,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 p-0">
+                <div class="col-lg-6 p-0" style="margin-top: 18vh">
+                    <p class="asteroids__advice">If we calculate the <span>FUEL COSTS</span> and <span>CARGO VALUE</span>,<br/>we can roughly estimate the <span>PROFIT</span> of each trip</p>
                     <table class="asteroids__calculations">
                         <thead>
                         <th>Fuel Costs</th>
@@ -128,7 +159,11 @@
                 cargoValue: 0.1,
                 estimatedProfit: 0,
                 cargoValueSecond: 1,
-                asteroid: null
+                asteroid: null,
+                fuelCosts: [{low: 'lo'}, {medium: 'me'}, {high: 'hi'}],
+                safety: ['unsafe', 'average', 'safe'],
+                suitability: ['unsuitable', 'suitable'],
+                currentFuelCost: null
             }
         },
         methods:{

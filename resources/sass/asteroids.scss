@@ -5,7 +5,7 @@
   top: 180%;
   left: 50%;
   padding-top: 24vh;
-  transform: translate(-90vh, -70vh) scale(0.7);
+  transform: translate(-90vh, -70vh) scale(0.5);
 }
 .earth{
   height: 400px;
@@ -15,6 +15,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .orbit{
   border-radius: 50%;
   border: 1px solid gray;
@@ -174,6 +175,13 @@
   }
 }
 .asteroids{
+  &__advice{
+    text-align: center;
+    font-size: 1.8rem;
+    & span{
+      font-weight: 700;
+    }
+  }
   &__suitability{
    &--lo{
      text-transform: uppercase;
@@ -192,10 +200,10 @@
     }
   }
    &__database{
-     margin-top: 6vh;
+     margin-top: 9vh;
      width: 40vw;
-     height: 85vh;
-     margin-left: 7vh;
+     height: 75vh;
+     margin-left: 10vh;
      & thead{
        & th{
          border-bottom: 2px solid black;
@@ -266,7 +274,7 @@
     letter-spacing: 2px;
   }
   &__calculations{
-    margin-top: 10vh;
+    margin-top: 5vh;
     width: 40vw;
     height: 85vh;
     margin-left: 7vh;
