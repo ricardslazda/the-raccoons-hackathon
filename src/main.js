@@ -12,6 +12,7 @@ Vue.use(VueRouter, Axios);
 const routes = [
   { path: '/', component: Landing, name: 'landing'},
   { path: '/asteroids', component: Asteroids, name: 'asteroids', props: true },
+
 ];
 
 const router = new VueRouter({

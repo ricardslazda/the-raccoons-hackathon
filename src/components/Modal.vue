@@ -9,17 +9,22 @@
     <div :class="{'d-none': loading}" class="h-100">
       <div v-if="!errored" class="h-100">
         <div class="row h-100" >
-          <div class="col-lg-12 h-100">
+          <div class="col-lg-12 h-100 data__container">
             <div class="data__information">
+              <div class="mb-5">
+                <p>Made of <span style="font-weight: 600;">{{this.comp}}</span></p>
+              </div>
+              <div class="mb-5">Possible Challenges: <span style="font-weight: 600;">Extremely fragile, has traces of silver on the surface, not the best option for mining</span></div>
+              <div>Advantages: <span style="font-weight: 600;">Has water, good place to set up an base.</span></div>
             </div>
             <div class="data__number">
               {{this.id}}
             </div>
-            <div class="data__elements">
-              <img src="../../public/images/composition/fe.png" class="mr-2"/>
-              <img src="../../public/images/composition/al.png" class="mr-2"/>
-              <img src="../../public/images/composition/co.png" class="mr-2"/>
-              <img src="../../public/images/composition/h.png"/>
+            <div class="data__class">
+              {{this.materialType}}
+            </div>
+            <div class="data__value">
+              <p>Estimated Value <span>{{this.valuation}}€</span></p>
             </div>
           </div>
         </div>
@@ -37,7 +42,6 @@
 
 <script>
 import Axios from "axios";
-
 export default {
   name: "Profile",
   data() {
@@ -48,7 +52,8 @@ export default {
       valuation: null,
       materialType: null,
       weight: null,
-      distanceToEarth: null
+      distanceToEarth: null,
+      comp:null,
     };
   },
   props: ['id', 'errored'],
@@ -61,13 +66,40 @@ export default {
               this.valuation = this.asteroid[0].price;
               this.materialType = this.asteroid[0].spec;
               this.distanceToEarth = this.asteroid[0].closeness;
+              if(this.asteroid[0].spec.includes('S',0)|| this.asteroid[0].spec.includes('V',0)|| this.asteroid[0].spec==='R'){
+                this.comp="Magnesium Silicate, Iron Silicate";
+              }
+              else if(this.asteroid[0].spec.includes('L',0) ){
+                this.comp="Magnesium Silicate, Alunminium, Iron Silicate";
+              }
+              else if(this.asteroid[0].spec.includes('C',0) || this.asteroid[0].spec.includes('K',0)){
+                this.comp="Nickel, Iron, Cobalt, Water, Nitrogen, Hydrogen, Ammonia";
+              }
+              else if(this.asteroid[0].spec.includes('X',0) && this.asteroid[0].spec!=='Xc'){
+                this.comp="Nickel, Iron, Cobalt";
+              }
+              else if(this.asteroid[0].spec==='Xc'){
+                this.comp="Platinum, Nickel, Iron, Cobalt";
+              }
+              else if(this.asteroid[0].spec==='D'){
+                this.comp="Water";
+              }
+              else if(this.asteroid[0].spec==='T'){
+                this.comp="Iron";
+              }
+              else if(this.asteroid[0].spec==='B'){
+                this.comp="Iron, Hydrogen, Ammonia, Nitrogen";
+              }
+              else{
+                this.comp="Unknown";
+              }
             })
             // eslint-disable-next-line no-unused-vars
             .catch(error => {
               this.errored = "Asteroid was not found";
             })
             .finally(() => this.loading = false)
-  }
+  },
 };
 </script>
 <style>

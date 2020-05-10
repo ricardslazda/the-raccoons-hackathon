@@ -22,6 +22,7 @@ html{
 }
 body{
   font-family: 'Open Sans', sans-serif !important;
+  color: black;
 }
 .stars, .twinkling {
   position:absolute;
@@ -43,9 +44,6 @@ body{
   background:transparent url(../images/twinkling.png) repeat top center;
 
   animation:move-twink-back 400s linear infinite;
-}
-body{
-  color: white;
 }
 .searchbar {
   float: right;

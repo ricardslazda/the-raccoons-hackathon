@@ -26,9 +26,12 @@
             </div>
             <div class="landing__introduction d-flex justify-content-end">
                 <div>
-                    <p>              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not.</p>
-                    <span>Visit the database <router-link class="landing__link" v-bind:to="'asteroids'">Here</router-link> </span>
+                    <p>
+                        Asteroid mining is the exploitation of raw materials from asteroids and other minor planets. As our planet struggles with resource scarcity,
+                        a potential solution can be found exploring the great unknown. Metals, minerals and energy sources have been found to exist in massive quantities within our
+                        solar system located on asteroids.
+                    </p>
+                    <span>Check out all the future opportunities <router-link class="landing__link" v-bind:to="'asteroids'">Here</router-link> </span>
                 </div>
                 <div>
                 </div>
@@ -39,24 +42,24 @@
                         <img class="earth" src="images/earth.png" alt=""/>
                     </div>
                     <div class="orbit orbit_1">
-                        <h1 class="label-1 d-inline">Ryugu</h1>
-                        <img src="images/asteroid.png" alt="" class="asteroid asteroid-1"/>
+                        <h1 class="label-1 d-inline">bJ98B13T</h1>
+                        <img @click="openModal('bJ98B13T')" src="images/asteroid.png" alt="" class="asteroid asteroid-1"/>
                     </div>
                     <div class="orbit orbit_2">
-                        <h1 class="label-2 d-inline">1989 ML</h1>
-                        <img src="images/asteroid.png" alt="" class="asteroid asteroid-2"/>
+                        <h1 class="label-2 d-inline">bK09D45D</h1>
+                        <img @click="openModal('bK09D45D')" src="images/asteroid.png" alt="" class="asteroid asteroid-2"/>
                     </div>
                     <div class="orbit orbit_3">
-                        <h1 class="label-3 d-inline">Nereus</h1>
-                        <img src="images/asteroid.png" alt="" class="asteroid asteroid-3"/>
+                        <h1 class="label-3 d-inline">bK00D08O</h1>
+                        <img @click="openModal('bK00D08O')" src="images/asteroid.png" alt="" class="asteroid asteroid-3"/>
                     </div>
                     <div class="orbit orbit_4">
-                        <h1 class="label-4 d-inline">Bennu</h1>
-                        <img src="images/asteroid.png" class="asteroid asteroid-4"/>
+                        <h1 class="label-4 d-inline">a0025143</h1>
+                        <img @click="openModal('a0025143')" src="images/asteroid.png" class="asteroid asteroid-4"/>
                     </div>
                     <div class="orbit orbit_5">
-                        <h1 class="label-5 d-inline">Didymos</h1>
-                        <img src="images/asteroid.png" class="asteroid asteroid-5" alt=""/>
+                        <h1 class="label-5 d-inline">bK02D03Q</h1>
+                        <img @click="openModal('bK02D03Q')" src="images/asteroid.png" class="asteroid asteroid-5" alt=""/>
                     </div>
                 </div>
             </div>
@@ -66,8 +69,17 @@
 
 <script>
 
+    import Modal from "./Modal";
+
     export default {
         name: 'Landing',
+        methods: {
+            openModal(id) {
+                this.$router.push('asteroids');
+                const style = { width: "70%", height: "70%" };
+                this.$modal.show(Modal, {id: id}, style);
+            }
+        },
     }
 </script>
 

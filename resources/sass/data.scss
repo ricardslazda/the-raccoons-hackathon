@@ -25,7 +25,7 @@
   }
   &__close{
     color: black;
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 700;
     position: absolute;
     top: 20px;
@@ -33,6 +33,38 @@
     font-family: 'Lucida', sans-serif;
     z-index: 10;
     cursor: pointer;
+    opacity: .8;
+  }
+  &__container{
+    padding-top: 130px;
+    padding-left: 50px;
+  }
+  &__class{
+    position: absolute;
+    right: 130px;
+    top: 15%;
+    font-size: 25rem;
+    font-weight: 700;
+    color: black;
+    opacity: .6;
+  }
+  &__information{
+    font-size: 2.2rem;
+    font-family: 'Lucida', sans-serif;
+    & div{
+      width: 50%;
+    }
+  }
+  &__value{
+    font-size: 2.2rem;
+    position: absolute;
+    right: 70px;
+    bottom: 20px;
+    font-family: 'Lucida', sans-serif;
+    color: green;
+    & p span{
+      font-weight: 600;
+    }
   }
   &__error{
     & div {
@@ -41,6 +73,8 @@
       font-size: 5rem;
       text-transform: uppercase;
       font-weight: 600;
+      color: black;
+      margin-bottom: 10vh;
     }
   }
   &__image{
