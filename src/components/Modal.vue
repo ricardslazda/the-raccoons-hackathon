@@ -66,9 +66,6 @@
           <div class="col-lg-12 h-100">
             <div class="data__information">
             </div>
-            <div class="data__number">
-              {{this.id}}
-            </div>
             <div class="data__elements">
               <img src="../../public/images/composition/fe.png" class="mr-2"/>
               <img src="../../public/images/composition/al.png" class="mr-2"/>
