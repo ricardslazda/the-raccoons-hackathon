@@ -40,7 +40,7 @@
                         <th scope="row"><a id="btnSearch" v-on:click="searchPlanet(asteroid.id)" class="btn-search">{{asteroid.id}}</a></th>
                         <td>{{asteroid.price}}</td>
                         <td><div class="btn btn-warning rounded-pill p-3">{{asteroid.spec}}</div></td>
-                        <td><span class="asteroids__status--uns asteroids__status">Unsuitable</span></td>
+                        <td><span class="asteroids__status--uns asteroids__status">Suitable</span></td>
                         <td>{{asteroid.producer}}</td>
                         <td><span class="asteroids__suitability--hi">Medium</span></td>
                         <td>{{asteroid.closeness}}</td>
@@ -63,7 +63,7 @@
     
 
     export default {
-        name: 'Landing',
+        name: 'cobalt',
         data: function () {
             return {
                 asteroids: null,
@@ -89,8 +89,9 @@
             }
         },
         mounted () {
+        this.loading = true;
             Axios
-                .get('https://www.asterank.com/api/asterank?query={%22profit%22:{%22$gt%22:2000}}&limit=20')
+                .get('https://www.asterank.com/api/asterank?query={%22spec%22:{%22$in%22%20:%20[%22C%22,%20%22C:%22,%20%22Cb%22,%20%22Cg%22,%20%22Cgh%22,%20%22Ch%22,%20%22K%22,%20%22K:%22,%20%22X%22,%20%22X:%22,%20%22Xce%22,%20%22Xk%22,%20%22Xc%22]}}&limit=20')
                 .then(response => (this.asteroids = response.data))
                 .catch(function () {
                     this.errored = true

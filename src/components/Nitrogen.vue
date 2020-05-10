@@ -7,7 +7,7 @@
            <router-link class="landing__link" v-bind:to="'cobalt'"><img src="../../public/images/composition/co.png" height=75px style="margin:10px"/></router-link> 
             <router-link class="landing__link" v-bind:to="'iron'"><img src="../../public/images/composition/fe.png" height=75px style="margin:10px"/></router-link> <br>
             <router-link class="landing__link" v-bind:to="'nickel'"><img src="../../public/images/composition/ni.png" height=75px style="margin:10px"/></router-link> 
-            <router-link class="landing__link" v-bind:to="'nitogen'"><img src="../../public/images/composition/n.png" height=75px style="margin:10px"/></router-link> <br>
+            <router-link class="landing__link" v-bind:to="'nitrogen'"><img src="../../public/images/composition/n.png" height=75px style="margin:10px"/></router-link> <br>
             <router-link class="landing__link" v-bind:to="'hydrogen'"><img src="../../public/images/composition/h.png" height=75px style="margin:10px"/></router-link> 
             <router-link class="landing__link" v-bind:to="'water'"><img src="../../public/images/composition/ho.png" height=75px style="margin:10px"/></router-link> <br>
             <router-link class="landing__link" v-bind:to="'platinum'"><img src="../../public/images/composition/pt.png" height=75px style="margin:10px"/></router-link> 
@@ -40,7 +40,7 @@
                         <th scope="row"><a id="btnSearch" v-on:click="searchPlanet(asteroid.id)" class="btn-search">{{asteroid.id}}</a></th>
                         <td>{{asteroid.price}}</td>
                         <td><div class="btn btn-warning rounded-pill p-3">{{asteroid.spec}}</div></td>
-                        <td><span class="asteroids__status--uns asteroids__status">Unsuitable</span></td>
+                        <td><span class="asteroids__status--uns asteroids__status">Suitable</span></td>
                         <td>{{asteroid.producer}}</td>
                         <td><span class="asteroids__suitability--hi">Medium</span></td>
                         <td>{{asteroid.closeness}}</td>
@@ -90,7 +90,7 @@
         },
         mounted () {
             Axios
-                .get('https://www.asterank.com/api/asterank?query={%22profit%22:{%22$gt%22:2000}}&limit=20')
+                .get('https://www.asterank.com/api/asterank?query={%22spec%22:{%22$in%22%20:%20[%22C%22,%20%22C:%22,%20%22Cb%22,%20%22Cg%22,%20%22Cgh%22,%20%22Ch%22,%20%22K%22,%20%22K:%22,%20%22B%22]}}&limit=20')
                 .then(response => (this.asteroids = response.data))
                 .catch(function () {
                     this.errored = true

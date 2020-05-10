@@ -90,7 +90,7 @@
         },
         mounted () {
             Axios
-                .get('https://www.asterank.com/api/asterank?query={%22profit%22:{%22$gt%22:2000}}&limit=20')
+                .get('https://www.asterank.com/api/asterank?query={%22spec%22:{%22$in%22%20:%20[%22S%22,%20%22S(IV)%22,%20%22S:%22,%20%22Sa%22,%20%22Sk%22,%20%22Sl%22,%20%22V%22,%20%22V:%22,%20%22R%22,%20%22Sq%22,%20%22Sq:%22,%20%22Sr%22]}}&limit=20')
                 .then(response => (this.asteroids = response.data))
                 .catch(function () {
                     this.errored = true
