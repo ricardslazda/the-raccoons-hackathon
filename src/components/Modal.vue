@@ -14,8 +14,8 @@
               <div class="mb-5">
                 <p>Made of <span style="font-weight: 600;">{{this.comp}}</span></p>
               </div>
-              <div class="mb-5">Possible Challenges: <span style="font-weight: 600;">Extremely fragile, has traces of silver on the surface, not the best option for mining</span></div>
-              <div>Advantages: <span style="font-weight: 600;">Has water, good place to set up an base.</span></div>
+              <div class="mb-5">Possible Challenges: <span style="font-weight: 600;">{{this.moreData.challenges}}</span></div>
+              <div>Advantages: <span style="font-weight: 600;">{{this.moreData.advantage}}</span></div>
             </div>
             <div class="data__number">
               {{this.id}}
@@ -56,7 +56,7 @@ export default {
       comp:null,
     };
   },
-  props: ['id', 'errored'],
+  props: ['id', 'errored', 'moreData'],
   mounted() {
     this.loading = true;
     Axios

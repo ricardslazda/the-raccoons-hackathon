@@ -23,7 +23,7 @@
                     <img src="../../public/images/composition/mgosi.png" height=75px style="margin:10px"/>
                 </div>
                 <div class="data__back">
-                    <router-link class="pl-4" :to="'/'">Home</router-link>
+                    <router-link :to="'/'">Home</router-link>
                 </div>
             </b-sidebar>
         </div>
@@ -53,17 +53,20 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr :key="asteroid.id" v-for="asteroid in asteroids" @click="openModal(asteroid.id)">
-                                <th scope="row">{{asteroid.id}}</th>
+                            <tr :key="asteroid.asteroidID" v-for="asteroid in data" @click="openModal(asteroid.asteroidID, asteroid)">
+                                <th scope="row">{{asteroid.asteroidID}}</th>
 
-                                <td><span class="asteroids__suitability--me">Sustainable</span></td>
-                                <td><span class="asteroids__suitability--hi">Good</span></td>
-                                <td>
-                                    <span class="asteroids__suitability--lo">
-                                        High
-                                    </span>
-                                </td>
-                                <td>{{((Math.random() * 9.00) + 1).toFixed(2)}}</td>
+                                <td><span v-bind:class="asteroid.suitability[1]">{{asteroid.suitability[0]}}</span></td>
+                                <td><span v-bind:class="asteroid.safety[1]">{{asteroid.safety[0]}}</span></td>
+                                <td><span v-bind:class="asteroid.fuelCost[1]">{{asteroid.fuelCost[0]}}</span></td>
+                                <td>{{asteroid.rating}}</td>
+                            </tr>
+                            <tr :key="asteroid.id" v-for="asteroid in asteroids">
+                                <th scope="row">{{asteroid.id}}</th>
+                                <td><span class="nod">No data</span></td>
+                                <td><span class="nod">No data</span></td>
+                                <td><span class="nod">No data</span></td>
+                                <td>0.00</td>
                             </tr>
                             </tbody>
                         </table>
@@ -160,10 +163,7 @@
                 estimatedProfit: 0,
                 cargoValueSecond: 1,
                 asteroid: null,
-                fuelCosts: [{low: 'lo'}, {medium: 'me'}, {high: 'hi'}],
-                safety: ['unsafe', 'average', 'safe'],
-                suitability: ['unsuitable', 'suitable'],
-                currentFuelCost: null
+                data: [{"_id":"5eb7b3ca45c319d5e40f2585","asteroidID":"bJ98B13T","suitability":['suitable', 'hi'],"safety":["average", 'me'],"fuelCost":["medium", 'me'],"rating":"6.78","challenges":"Weak gravitational pull makes it hard to setup a base","advantage":"Not too far away"},{"_id":"5eb7b46f45c319d5e40f2586","asteroidID":"bK02D03Q","suitability":['suitable', 'hi'],"safety":["low", 'lo'],"fuelCost":["low", 'lo'],"rating":"8.1","challenges":"Diamond surface makes it hard to mine","advantage":"Low fuel cost and high grade minerals"},{"_id":"5eb7b47645c319d5e40f2587","asteroidID":"bK00Y00A","suitability":['suitable', 'hi'],"safety":["above average", 'me'],"fuelCost":["medium", 'me'],"rating":"6.3","challenges":"Orbits far away from earth","advantage":"Safety is high and normal fuel cost"},{"_id":"5eb7b47e45c319d5e40f2588","asteroidID":"a0025143","suitability":["unsuitable","lo"],"safety":["high", 'hi'],"fuelCost":["high", 'hi'],"rating":"5.6","challenges":"Not suitable or high grade material","advantage":"Very safe process of mining"},{"_id":"5eb7b48545c319d5e40f2589","asteroidID":"bK09D45D","suitability":["unsuitable","lo"],"safety":["average", 'me'],"fuelCost":["high", 'hi'],"rating":"4.53","challenges":"Weak gravitational pull makes it hard to setup a base","advantage":"Not too far away"},{"_id":"5eb7b48b45c319d5e40f258a","asteroidID":"bK00D08O","suitability":['suitable', 'hi'],"safety":["low", 'lo'],"fuelCost":["low", 'lo'],"rating":"7.5","challenges":"Abnormally high temperatures make it difficult to mine","advantage":"Very high valuation"},{"_id":"5eb7b49245c319d5e40f258b","asteroidID":"bK00AK5E","suitability":["unsuitable","lo"],"safety":["low", 'lo'],"fuelCost":["medium", 'me'],"rating":"3.7","challenges":"Extremely far away and in close vicinity of a black hole","advantage":"Medium valuation"},{"_id":"5eb7b49845c319d5e40f258c","asteroidID":"bJ99F19N","suitability":['suitable', 'hi'],"safety":["good", 'hi'],"fuelCost":["low", 'lo'],"rating":"8.8","challenges":"Only accessible once a decade","advantage":"Very valuable, safe and doesn't take much fuel!"},{"_id":"5eb7b49f45c319d5e40f258d","asteroidID":"bK00AK5H","suitability":['suitable', 'hi'],"safety":["average", 'me'],"fuelCost":["high", 'hi'],"rating":"5.4","challenges":"Weak gravitational pull makes it hard to setup a base","advantage":"Medium value"},{"_id":"5eb7b4a645c319d5e40f258e","asteroidID":"bJ99D02Y","suitability":["unsuitable","lo"],"safety":["average", 'me'],"fuelCost":["low", 'lo'],"rating":"7.4","challenges":"Very unstable and can break on mining","advantage":"Mostly made of gold and thus extremely valuable"}],
             }
         },
         methods:{
@@ -178,12 +178,12 @@
                     .finally(() => this.loading = false);
                 this.openModal();
             },
-            openModal(id) {
+            openModal(id, data) {
                 if (id){
                     this.search = id;
                 }
                 const style = { width: "70%", height: "70%" };
-                this.$modal.show(Modal, {id: this.search, errors: this.errored}, style);
+                this.$modal.show(Modal, {id: this.search, errors: this.errored, moreData: data}, style);
             },
             calculateFuelCost(){
                 this.fuelCost = ((this.distanceWithCargo * this.distance) + (this.distanceWithoutCargo * this.distance)).toFixed(2);
