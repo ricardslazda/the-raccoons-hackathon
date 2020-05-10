@@ -7,7 +7,7 @@
            <router-link class="landing__link" v-bind:to="'cobalt'"><img src="../../public/images/composition/co.png" height=75px style="margin:10px"/></router-link> 
             <router-link class="landing__link" v-bind:to="'iron'"><img src="../../public/images/composition/fe.png" height=75px style="margin:10px"/></router-link> <br>
             <router-link class="landing__link" v-bind:to="'nickel'"><img src="../../public/images/composition/ni.png" height=75px style="margin:10px"/></router-link> 
-            <router-link class="landing__link" v-bind:to="'nitogen'"><img src="../../public/images/composition/n.png" height=75px style="margin:10px"/></router-link> <br>
+            <router-link class="landing__link" v-bind:to="'nitrogen'"><img src="../../public/images/composition/n.png" height=75px style="margin:10px"/></router-link> <br>
             <router-link class="landing__link" v-bind:to="'hydrogen'"><img src="../../public/images/composition/h.png" height=75px style="margin:10px"/></router-link> 
             <router-link class="landing__link" v-bind:to="'water'"><img src="../../public/images/composition/ho.png" height=75px style="margin:10px"/></router-link> <br>
             <router-link class="landing__link" v-bind:to="'platinum'"><img src="../../public/images/composition/pt.png" height=75px style="margin:10px"/></router-link> 
