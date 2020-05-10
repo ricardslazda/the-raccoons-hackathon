@@ -9,25 +9,25 @@
             <b-button class="data__sidebar" v-b-toggle.sidebar-right><img src="https://img.icons8.com/ios-filled/75/000000/menu.png"/></b-button>
             <b-sidebar id="sidebar-right" title="Browse by Resource" left bg-variant="dark" text-variant="light" shadow>
                 <div class="px-3 py-2" style="text-align: center; margin-top: 8vh;">
-                    <img src="../../public/images/composition/co.png" height=75px style="margin:10px"/>
-                    <img src="../../public/images/composition/fe.png" height=75px style="margin:10px"/> <br>
-                    <img src="../../public/images/composition/ni.png" height=75px style="margin:10px"/>
-                    <img src="../../public/images/composition/n.png" height=75px style="margin:10px"/> <br>
-                    <img src="../../public/images/composition/h.png" height=75px style="margin:10px"/>
-                    <img src="../../public/images/composition/ho.png" height=75px style="margin:10px"/> <br>
-                    <img src="../../public/images/composition/pt.png" height=75px style="margin:10px"/>
-                    <img src="../../public/images/composition/al.png" height=75px style="margin:10px"/> <br>
-                    <img src="../../public/images/composition/nh.png" height=75px style="margin:10px"/>
-                    <img src="../../public/images/composition/nife.png" height=75px style="margin:10px"/> <br>
-                    <img src="../../public/images/composition/fesio.png" height=75px style="margin:10px"/>
-                    <img src="../../public/images/composition/mgosi.png" height=75px style="margin:10px"/>
+                    <img src="../../public/images/composition/co.png" height=75px style="margin:10px; opacity: .5"/>
+                    <img src="../../public/images/composition/fe.png" height=75px style="margin:10px; opacity: .5"/> <br>
+                    <img src="../../public/images/composition/ni.png" height=75px style="margin:10px; opacity: .5"/>
+                    <img src="../../public/images/composition/n.png" height=75px style="margin:10px; opacity: .5"/> <br>
+                    <img src="../../public/images/composition/h.png" height=75px style="margin:10px; opacity: .5"/>
+                    <img src="../../public/images/composition/ho.png" height=75px style="margin:10px; opacity: .5"/> <br>
+                    <img src="../../public/images/composition/pt.png" height=75px style="margin:10px; opacity: .5"/>
+                    <img src="../../public/images/composition/al.png" height=75px style="margin:10px; opacity: .5"/> <br>
+                    <img src="../../public/images/composition/nh.png" height=75px style="margin:10px; opacity: .5"/>
+                    <img src="../../public/images/composition/nife.png" height=75px style="margin:10px; opacity: .5"/> <br>
+                    <img src="../../public/images/composition/fesio.png" height=75px style="margin:10px; opacity: .5"/>
+                    <img src="../../public/images/composition/mgosi.png" height=75px style="margin:10px; opacity: .5"/>
                 </div>
-                <div class="data__back">
-                    <router-link :to="'/'">Home</router-link>
+                <div class="data__back" style="background: white;">
+                    <router-link style="color: black; padding: 20px" :to="'/'">Home</router-link>
                 </div>
             </b-sidebar>
         </div>
-        <main style="height: 100vh; width: 100%; overflow: hidden;" :class="{'d-none': loading}">
+        <main style="height: 100vh; width: 100%; overflow: hidden; background: white" :class="{'d-none': loading}">
             <div class="text-center mt-5 data__title">
                 <h1>Asteroid Mining Analytics</h1>
             </div>
