@@ -8,6 +8,8 @@ import VModal from "vue-js-modal";
 import {SidebarPlugin} from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import Paginate from 'vuejs-paginate'
+Vue.component('paginate', Paginate)
 
 Vue.use(VModal, { dynamic: true, injectModalsContainer: true });
 Vue.use(VueRouter, Axios);

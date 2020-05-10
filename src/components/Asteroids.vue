@@ -142,9 +142,10 @@
 
     import Axios from "axios";
     import Modal from "./Modal";
-
     export default {
         name: 'Landing',
+        components: {
+        },
         data: function () {
             return {
                 cargoValuePerKg: 1,
@@ -176,7 +177,7 @@
                     this.errored = true
                 })
                     .finally(() => this.loading = false);
-                this.openModal();
+                this.openModal(this.search, {challenges: "No data", advantage: "No data"});
             },
             openModal(id, data) {
                 if (id){
@@ -197,7 +198,7 @@
         },
         mounted () {
             Axios
-                .get('https://www.asterank.com/api/asterank?query={%22price%22:{%22$gt%22:0.0}}&limit=10')
+                .get('https://www.asterank.com/api/asterank?query={%22price%22:{%22$lt%22:0.0}}&limit=4')
                 .then(response => (
                     this.asteroids = response.data
                 ))
