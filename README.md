@@ -1,12 +1,9 @@
 ## Pictures
 
-![Imgur](https://imgur.com/eiHigZE.png)
-
-![Imgur](https://imgur.com/b5uE6ys.png)
-
-![Imgur](https://imgur.com/MzvKbja.png)
-
-![Imgur](https://imgur.com/zFUR5PK.png)
+![Docs](docs/1.png)
+![Docs](docs/2.png)
+![Docs](docs/3.png)
+![Docs](docs/4.png)
 
 ## Inspiration
 One of the biggest rising resource industries to soon dominate the scene is asteroid mining. Some specialists speculate we are only a few decades away from starting to mine our first ones. The problem is though, not all asteroids contain valuable metals or water, some of them are just piles of rubble held together by microgravity. This is where our platform comes in. Our website will help asteroid miners figure out which space rocks to mine and how difficult it will be.
