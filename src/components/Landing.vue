@@ -15,7 +15,6 @@
                         The future is now. As we have become multiplanetary
                         species, asteroids have become an important source of vast amount of resources.<br/><br/>
                         SpaceMine is here to help you take control of the asteroid business!
-<!--                        These sentences need to link-->
                     </div>
                     <div class="row d-flex justify-content-center flex-column landing__text">
                         <div class="text-enter">
