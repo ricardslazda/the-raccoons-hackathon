@@ -26,5 +26,5 @@ The developers improved their skills in Vue.js, two of them learned the framewor
 With SpaceMine the sky is the limit. We plan on implementing a space research and mining investment opportunity where we would open up this complex topic to the general public. We aim for SpaceMine to become the go-to site for analyzing asteroid data once the industry takes off. When the technology start advancing far enough to support interstellar travel, we want to start adding planets and stars to our database and their approximate value.
 **Slack Channel: #spacemine**
 
-## NOTE
+## Note
 If you experience problems with the website, make sure to **zoom out** to see the whole page. If you are visiting the project on **laptop** or **tablet**, you might have to zoom out to **75%** or **50%**. 
