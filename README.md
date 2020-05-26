@@ -1,9 +1,19 @@
+## Pictures
+
+![Imgur](https://imgur.com/eiHigZE.png)
+
+![Imgur](https://imgur.com/b5uE6ys.png)
+
+![Imgur](https://imgur.com/MzvKbja.png)
+
+![Imgur](https://imgur.com/zFUR5PK.png)
+
 ## Inspiration
 One of the biggest rising resource industries to soon dominate the scene is asteroid mining. Some specialists speculate we are only a few decades away from starting to mine our first ones. The problem is though, not all asteroids contain valuable metals or water, some of them are just piles of rubble held together by microgravity. This is where our platform comes in. Our website will help asteroid miners figure out which space rocks to mine and how difficult it will be.
 We came to this idea by simply doing a brainstorming session. We were trying to figure out a problem that isn't obvious, but that could be highly relevant in the future. The provided solution
 ## What it does
 Our platform will show the nearest asteroids to Earth on a map. The users will be able to click on each asteroid and see its distance from Earth, where it's heading, what it might have in it and what its approximate value is. Our app will be like a platform to anyone interested in asteroid mining or doing research on the topic. It will also have a search engine, so for instance, if I want to mine gold, our website would provide the user with the most profitable candidates. 
-https://ricardslazda.github.io/raccoons-space-time/#/
+
 ## How we built it
 We structured the website using react and used Asterank API to collect data on near-Earth asteroids. Asterank relies on NASA's database for asteroids. We analyzed Asterank to determine the composition of asteroids based on their types. Using our results, we derived a set of queries to extract the best asteroids for each natural resource.
 ## Challenges we ran into
