@@ -10,7 +10,7 @@
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap-vue": "^2.13.1",
     "core-js": "^3.4.3",
     "node-sass": "^4.13.0",
